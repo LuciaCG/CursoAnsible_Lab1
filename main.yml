@@ -1,6 +1,6 @@
 ---
-- include_tasks: common.yml
-- include_tasks: haproxy_server.yml
-- include_tasks: tomcat.yml
-- include_tasks: index.yml
-- include_tasks: postgres.yml
+- include: common.yml
+- include: haproxy_server.yml
+- include: tomcat.yml
+- include: index.yml
+- include: postgres.yml
