@@ -1,5 +1,6 @@
 ---
 - name: index.html on app
+  hosts: apps
   gather_facts: false
   become: true
 
