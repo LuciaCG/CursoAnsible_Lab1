@@ -29,8 +29,8 @@
       dest: /etc/haproxy/haproxy.cfg
     notify:
       - restart_HAproxy
-
-- handlers:
+  
+  handlers:
   - name: restart_HAproxy
     service:
       name: haproxy
