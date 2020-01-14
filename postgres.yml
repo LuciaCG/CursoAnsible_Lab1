@@ -10,24 +10,28 @@
       name: postgresql-server
       state: latest
     notify: 
-      - initialize postgres
-      - initialize postgres some more
+      - initialize_postgres
+      - initialize_postgres_more
   
   - name: enable apache at boot
     service:
       name: postgresql
       enabled: yes
+    notify: 
+      - initialize_postgres
+      - initialize_postgres_more
 
   - name: start postgres
     service:
       name: postgresql.service
       state: started
+    notify: 
+      - initialize_postgres
+      - initialize_postgres_more
 
-
-# only run the next 2 tasks once!
   handlers:
-  - name: initilize postgres
+  - name: initialize_postgres
     command: postgresql-setup initdb
-  - name: initilize postgres some more
+  - name: initialize_postgres_more
     command: chkconfig postgresql on
 
