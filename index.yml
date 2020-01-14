@@ -5,7 +5,7 @@
   become: true
 
   tasks:
-  - name: copy static index.html to tomcat webapps/ansible/index.html
+  - name: copy static index.html to tomcat webapps/ROOT/index.html
     template:
       src: index.html.app
-      dest: /usr/share/tomcat/webapps/ansible/index.html
+      dest: /usr/share/tomcat/webapps/ROOT/index.html
