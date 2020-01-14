@@ -25,7 +25,7 @@
 
 
 # only run the next 2 tasks once!
-- handlers:
+  handlers:
   - name: initilize postgres
     command: postgresql-setup initdb
   - name: initilize postgres some more
