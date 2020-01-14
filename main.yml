@@ -1,25 +1,6 @@
 ---
-- name: Enable repos
-  hosts: all
-  tasks:
-    - include: common.yml
-
-- name: Set up haproxy server
-  hosts: frontends
-  tasks:
-    - include: haproxy_server.yml
-
-- name: tomcat
-  hosts: apps
-  tasks:
-    - include: tomcat.yml
-
-- name: index
-  hosts: apps
-  tasks:
-    - include: index.yml
-
-- name: postgres
-  hosts: appdbs
-  tasks:
-    - include: postgres.yml
+- include_tasks: common.yml
+- include_tasks: haproxy_server.yml
+- include_tasks: tomcat.yml
+- include_tasks: index.yml
+- include_tasks: postgres.yml
