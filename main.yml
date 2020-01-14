@@ -1,16 +1,25 @@
 ---
 - name: Enable repos
-  import_playbooks: common.yml
+  hosts: all
+  tasks:
+    - common.yml
 
 - name: Set up haproxy server
-  import_playbooks: haproxy_server.yml
+  hosts: frontends
+  tasks:
+    - haproxy_server.yml
 
 - name: tomcat
-  import_playbook: tomcat.yml
+  hosts: apps
+  tasks:
+    - tomcat.yml
 
 - name: index
-  hosts: app1
-  import_playbooks: index.yml
+  hosts: apps
+  tasks:
+    - index.yml
 
 - name: postgres
-  import_playbook: postgres.yml
+  hosts: appdbs
+  tasks:
+    - postgres.yml

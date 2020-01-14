@@ -1,6 +1,5 @@
 ---
 - name: deploy postgres
-  hosts: appdbs
   gather_facts: false
   become: true
 
